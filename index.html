@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaime Richard & Dayana Alejandra — ¡Nos Casamos!</title>
+  <meta name="description"
+    content="Invitación de boda de Jaime Richard y Dayana Alejandra. Sábado 11 de Abril de 2026, Cochabamba." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { gold: '#C8A96E', 'gold-dark': '#A8893E', 'gold-light': '#E8D5A8', dark: '#1a1a1a', cream: '#FFFDF8', 'warm-white': '#FFF9F0' },
+          fontFamily: { script: ['"Great Vibes"', 'cursive'], serif: ['"Cormorant Garamond"', 'serif'] },
+        }
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-[#FFFDF8] text-[#1a1a1a] antialiased overflow-x-hidden">
+
+  <!-- ===== FIXED BLOOMING TREE GLOBAL ===== -->
+  <div id="global-tree-bg">
+    <svg id="tree-svg" viewBox="0 0 400 500">
+      <!-- Trunk -->
+      <path class="branch" d="M200 500 Q200 400 200 350" stroke-width="4" />
+      <!-- Main branches -->
+      <path class="branch" d="M200 350 Q180 300 140 260" stroke-width="3" />
+      <path class="branch" d="M200 350 Q220 300 260 260" stroke-width="3" />
+      <path class="branch" d="M200 320 Q170 280 130 300" stroke-width="2" />
+      <path class="branch" d="M200 320 Q230 280 270 300" stroke-width="2" />
+      <!-- Upper branches -->
+      <path class="branch" d="M140 260 Q120 230 100 200" stroke-width="1.5" />
+      <path class="branch" d="M140 260 Q150 230 160 200" stroke-width="1.5" />
+      <path class="branch" d="M260 260 Q280 230 300 200" stroke-width="1.5" />
+      <path class="branch" d="M260 260 Q250 230 240 200" stroke-width="1.5" />
+      <!-- Small twigs -->
+      <path class="branch" d="M100 200 Q80 170 70 150" stroke-width="1" />
+      <path class="branch" d="M100 200 Q110 170 120 150" stroke-width="1" />
+      <path class="branch" d="M300 200 Q320 170 330 150" stroke-width="1" />
+      <path class="branch" d="M300 200 Q290 170 280 150" stroke-width="1" />
+      <path class="branch" d="M200 300 Q200 260 200 220" stroke-width="1.5" />
+      <path class="branch" d="M200 220 Q185 190 170 170" stroke-width="1" />
+      <path class="branch" d="M200 220 Q215 190 230 170" stroke-width="1" />
+
+      <!-- Flowers (bloom on scroll) -->
+      <g class="flower">
+        <circle cx="70" cy="145" r="10" fill="#E8D5A8" opacity=".7" />
+        <circle cx="70" cy="145" r="4" fill="#D4AF37" />
+      </g>
+      <g class="flower">
+        <circle cx="120" cy="145" r="9" fill="#EACDA3" opacity=".7" />
+        <circle cx="120" cy="145" r="4" fill="#C8A96E" />
+      </g>
+      <g class="flower">
+        <circle cx="100" cy="195" r="11" fill="#E8D5A8" opacity=".6" />
+        <circle cx="100" cy="195" r="5" fill="#D4AF37" />
+      </g>
+      <g class="flower">
+        <circle cx="140" cy="255" r="10" fill="#EACDA3" opacity=".7" />
+        <circle cx="140" cy="255" r="4" fill="#C8A96E" />
+      </g>
+      <g class="flower">
+        <circle cx="160" cy="195" r="9" fill="#E8D5A8" opacity=".6" />
+        <circle cx="160" cy="195" r="4" fill="#D4AF37" />
+      </g>
+      <g class="flower">
+        <circle cx="170" cy="165" r="10" fill="#d4a574" opacity=".6" />
+        <circle cx="170" cy="165" r="4" fill="#C8A96E" />
+      </g>
+      <g class="flower">
+        <circle cx="200" cy="215" r="12" fill="#E8D5A8" opacity=".7" />
+        <circle cx="200" cy="215" r="5" fill="#D4AF37" />
+      </g>
+      <g class="flower">
+        <circle cx="230" cy="165" r="10" fill="#EACDA3" opacity=".6" />
+        <circle cx="230" cy="165" r="4" fill="#C8A96E" />
+      </g>
+      <g class="flower">
+        <circle cx="240" cy="195" r="9" fill="#E8D5A8" opacity=".7" />
+        <circle cx="240" cy="195" r="4" fill="#D4AF37" />
+      </g>
+      <g class="flower">
+        <circle cx="260" cy="255" r="10" fill="#d4a574" opacity=".6" />
+        <circle cx="260" cy="255" r="4" fill="#C8A96E" />
+      </g>
+      <g class="flower">
+        <circle cx="280" cy="145" r="11" fill="#E8D5A8" opacity=".7" />
+        <circle cx="280" cy="145" r="5" fill="#D4AF37" />
+      </g>
+      <g class="flower">
+        <circle cx="300" cy="195" r="10" fill="#EACDA3" opacity=".6" />
+        <circle cx="300" cy="195" r="4" fill="#C8A96E" />
+      </g>
+      <g class="flower">
+        <circle cx="330" cy="145" r="9" fill="#E8D5A8" opacity=".7" />
+        <circle cx="330" cy="145" r="4" fill="#D4AF37" />
+      </g>
+      <g class="flower">
+        <circle cx="130" cy="295" r="8" fill="#EACDA3" opacity=".6" />
+        <circle cx="130" cy="295" r="3" fill="#C8A96E" />
+      </g>
+      <g class="flower">
+        <circle cx="270" cy="295" r="8" fill="#E8D5A8" opacity=".6" />
+        <circle cx="270" cy="295" r="3" fill="#D4AF37" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- ===== ENVELOPE INTRO ===== -->
+  <div id="envelope-overlay" class="envelope-overlay">
+    <div class="flex flex-col items-center">
+      <p class="font-script text-3xl font-semibold text-gold-dark mb-6 animate-fade-in tracking-wide">Tienes una
+        invitación...</p>
+      <div class="envelope-body">
+        <div class="envelope-flap"></div>
+        <div class="envelope-seal">J & D</div>
+        <div class="envelope-inner-card">
+          <p style="font-family:'Great Vibes',cursive;font-size:24px;color:#A8893E;">¡¡Nos Casamos!!</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:24px;color:#666;margin-top:4px;">11 de Abril de
+            2026</p>
+        </div>
+      </div>
+      <span class="envelope-skip">Toca para abrir ✉️</span>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Premium Unsplash Background Image -->
+    <div class="hero-bg"></div>
+    <div class="absolute inset-0 opacity-[0.05]"
+      style="background-image:url('data:image/svg+xml,<svg width=&quot;60&quot; height=&quot;60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path d=&quot;M30 0L60 30L30 60L0 30Z&quot; fill=&quot;none&quot; stroke=&quot;%23C8A96E&quot; stroke-width=&quot;.5&quot;/></svg>');background-size:60px 60px;">
+    </div>
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div id="sparkles" class="absolute inset-0 pointer-events-none"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <div class="mb-4 animate-float">
+        <svg class="mx-auto w-12 h-12 text-gold" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M9 2a5 5 0 0 0-4.9 4.04A5 5 0 0 0 7 16a5 5 0 0 0 4.9-4.04A5 5 0 1 0 15 2a5 5 0 0 0-3 1.02A5 5 0 0 0 9 2Zm0 2a3 3 0 0 1 2.12.88l.18.2A5 5 0 0 0 9 7c0 .69.14 1.35.39 1.95A3 3 0 1 1 9 4Zm6 0a3 3 0 1 1-.39 4.95c.25-.6.39-1.26.39-1.95 0-.71-.14-1.38-.4-2A3 3 0 0 1 15 4Z" />
+        </svg>
+      </div>
+      <h1
+        class="font-script text-5xl sm:text-7xl md:text-8xl text-gold animate-shimmer mb-2 tracking-wide font-normal pb-2"
+        style="line-height:1.2;">¡¡Nos Casamos!!</h1>
+      <div class="divider my-6"><span class="text-gold animate-heartbeat text-2xl">♥</span></div>
+      <p class="font-script text-3xl sm:text-5xl md:text-6xl text-[#1a1a1a] leading-snug mb-8">Jaime Richard <span
+          class="text-gold">&</span> Dayana Alejandra</p>
+      <p class="font-serif text-lg sm:text-xl md:text-2xl text-[#3a3a3a] italic max-w-2xl mx-auto leading-relaxed mb-8 animate-fade-in"
+        style="animation-delay:.5s;">"Ser profundamente amado por alguien te da fuerza, mientras que amar profundamente
+        a alguien te da valor. Con la fuerza y el valor que nos da nuestro amor, y con la alegría de nuestra familia,
+        los invitamos a celebrar nuestra boda."</p>
+      <div
+        class="bg-white/40 backdrop-blur-md border border-gold/20 rounded-2xl px-6 py-5 max-w-xl mx-auto animate-fade-in"
+        style="animation-delay:.8s;">
+        <p class="text-sm sm:text-base text-[#4a4a4a] leading-relaxed">Con la alegría, bendición de Dios y nuestros
+          padres:<br /><span class="text-gold-dark font-semibold">Julio Richard Daza Soto &amp; Ruth Mery Guzman
+            Guardia</span><br /><span class="text-gold-dark font-semibold">Orlando Quiñones &amp; Wilma Mejia
+            Grageda</span>
+        </p>
+      </div>
+      <div class="mt-12 animate-float">
+        <a href="#countdown-section" class="inline-block text-gold/60 hover:text-gold transition-colors">
+          <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+          <svg class="w-6 h-6 mx-auto -mt-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COUNTDOWN ===== -->
+  <section id="countdown-section" class="py-16 relative z-10 w-full overflow-hidden">
+    <!-- Subtle background wrapper -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF8] via-[#FDF7E8] to-[#F5E6C8] opacity-80 z-[-1]"></div>
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent">
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
+      <h2 class="font-script text-4xl sm:text-5xl text-gold mb-12 tracking-wide">Faltan...</h2>
+      <div class="flex justify-center items-center gap-3 sm:gap-6 flex-wrap">
+
+        <!-- Day -->
+        <div
+          class="bg-white/80 backdrop-blur-md border border-gold/20 shadow-lg rounded-2xl w-20 h-24 sm:w-28 sm:h-32 flex flex-col justify-center items-center hover:-translate-y-1 transition-transform duration-300">
+          <span id="cd-days" class="text-3xl sm:text-5xl font-serif text-[#2a2a2a] mb-1">---</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#8a8a8a] font-medium">Días</span>
+        </div>
+
+        <span class="text-3xl sm:text-5xl text-gold/50 font-light font-serif mb-2">:</span>
+
+        <!-- Hour -->
+        <div
+          class="bg-white/80 backdrop-blur-md border border-gold/20 shadow-lg rounded-2xl w-20 h-24 sm:w-28 sm:h-32 flex flex-col justify-center items-center hover:-translate-y-1 transition-transform duration-300">
+          <span id="cd-hours" class="text-3xl sm:text-5xl font-serif text-[#2a2a2a] mb-1">--</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#8a8a8a] font-medium">Horas</span>
+        </div>
+
+        <span class="text-3xl sm:text-5xl text-gold/50 font-light font-serif mb-2">:</span>
+
+        <!-- Min -->
+        <div
+          class="bg-white/80 backdrop-blur-md border border-gold/20 shadow-lg rounded-2xl w-20 h-24 sm:w-28 sm:h-32 flex flex-col justify-center items-center hover:-translate-y-1 transition-transform duration-300">
+          <span id="cd-mins" class="text-3xl sm:text-5xl font-serif text-[#2a2a2a] mb-1">--</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#8a8a8a] font-medium">Min</span>
+        </div>
+
+        <span class="text-3xl sm:text-5xl text-gold/50 font-light font-serif mb-2">:</span>
+
+        <!-- Sec -->
+        <div
+          class="bg-white/80 backdrop-blur-md border border-gold/20 shadow-lg rounded-2xl w-20 h-24 sm:w-28 sm:h-32 flex flex-col justify-center items-center hover:-translate-y-1 transition-transform duration-300">
+          <span id="cd-secs" class="text-3xl sm:text-5xl font-serif text-[#2a2a2a] mb-1">--</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#8a8a8a] font-medium">Seg</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- "NUESTRA HISTORIA" SECTION REMOVED AS REQUESTED -->
+
+  <!-- ===== FLOURISH ===== -->
+  <div class="flourish"><svg width="200" height="30" viewBox="0 0 200 30">
+      <path d="M0 15 Q50 0 100 15 Q150 30 200 15" fill="none" stroke="#C8A96E" stroke-width=".5" />
+      <circle cx="100" cy="15" r="3" fill="#C8A96E" />
+    </svg></div>
+
+  <!-- BLOOMING TREE CSS SECTION REMOVED SINCE IT'S GLOBAL NOW -->
+
+  <!-- ===== FLOURISH ===== -->
+  <div class="flourish"><svg width="200" height="30" viewBox="0 0 200 30">
+      <path d="M0 15 Q50 30 100 15 Q150 0 200 15" fill="none" stroke="#C8A96E" stroke-width=".5" />
+      <circle cx="100" cy="15" r="3" fill="#C8A96E" />
+    </svg></div>
+
+  <!-- ===== DETALLES ===== -->
+  <section id="detalles" class="py-20 relative z-10 w-full clear-both">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="font-script text-4xl sm:text-5xl text-gold mb-3 tracking-wide">Detalles del Evento</h2>
+        <div class="divider">
+          <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+            <path d="M0 10 Q10 20 20 10 T40 10" stroke="#C8A96E" stroke-width="1" />
+            <polygon points="20,7 23,10 20,13 17,10" fill="#D4AF37" />
+          </svg>
+        </div>
+      </div>
+      <div class="text-center mb-14 reveal">
+        <div class="inline-flex items-center gap-3 bg-gold/10 border border-gold/20 rounded-full px-8 py-3">
+          <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>
+          <span class="font-serif text-lg sm:text-xl text-[#2a2a2a]">Sábado 11 de Abril de 2026 — <span
+              class="text-gold-dark font-semibold">16:00 hrs</span></span>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Ceremony -->
+        <div class="card-glow bg-white/[.03] backdrop-blur-sm border border-gold/10 rounded-2xl p-8 text-center reveal">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2L2 7v1h1v11h3V9h12v10h3V8h1V7L12 2zm0 2.26L18.47 7H5.53L12 4.26zM8 11v2h3v-2H8zm5 0v2h3v-2h-3zM8 15v2h3v-2H8zm5 0v2h3v-2h-3z" />
+            </svg>
+          </div>
+          <h3 class="font-script text-3xl text-gold mb-2">Ceremonia Religiosa</h3>
+          <p class="font-serif text-xl text-[#2a2a2a] mb-1 font-semibold">Iglesia "Nuestra Señora de la Merced"</p>
+          <p class="font-serif text-base text-[#5a5a5a] mb-3">Avenida Juan de la Rosa y Calle Ismael Cespedes,
+            Cochabamba</p>
+          <a href="https://www.google.com/maps/search/Iglesia+Nuestra+Se%C3%B1ora+de+la+Merced+Avenida+Juan+de+la+Rosa+Cochabamba"
+            target="_blank" rel="noopener" class="maps-btn">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+            </svg>
+            Ver en Google Maps
+          </a>
+        </div>
+        <!-- Reception -->
+        <div class="card-glow bg-white/[.03] backdrop-blur-sm border border-gold/10 rounded-2xl p-8 text-center reveal">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M8 2L6.5 9.5C6.18 11.08 7.39 12.5 9 12.5V20H7v2h6v-2h-2v-7.5c1.61 0 2.82-1.42 2.5-3L12 2H8zm1 2h2l1 5H8l1-5zm6-2l-1.5 7.5c-.16.79.09 1.57.59 2.15.5.57 1.2.85 1.91.85V20h-2v2h6v-2h-2v-7.5c.71 0 1.41-.28 1.91-.85.5-.58.75-1.36.59-2.15L19 2h-4zm1 2h2l1 5h-4l1-5z" />
+            </svg>
+          </div>
+          <h3 class="font-script text-3xl text-gold mb-2">Recepción</h3>
+          <p class="font-serif text-xl text-[#2a2a2a] mb-1 font-semibold">Salón de Eventos <span
+              class="font-script text-2xl text-gold-dark">"Notre Dame"</span></p>
+          <p class="font-serif text-base text-[#5a5a5a] mb-3">Avenida D'orbigny, esquina Calle Cobija, entre Av.
+            Beijing y Av. Villavicencio</p>
+          <a href="https://www.google.com/maps/search/Sal%C3%B3n+Notre+Dame+Avenida+D%27orbigny+Calle+Cobija+Cochabamba"
+            target="_blank" rel="noopener" class="maps-btn">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+            </svg>
+            Ver en Google Maps
+          </a>
+        </div>
+      </div>
+      <!-- Dress code -->
+      <div class="mt-12 text-center reveal">
+        <div
+          class="inline-flex items-center gap-4 bg-gradient-to-r from-gold/5 via-gold/10 to-gold/5 border border-gold/20 rounded-2xl px-8 py-5">
+          <div class="flex gap-4 items-center justify-center">
+            <!-- Traje -->
+            <svg class="w-10 h-10 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              stroke-width="1.2">
+              <!-- Dress -->
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 7l-2 3c-1 3-3 8-4 10h12c-1-2-3-7-4-10l-2-3z" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M10 7c0-2-1-3-2-3s-2 1-2 3M14 7c0-2 1-3 2-3s2 1 2 3" />
+              <!-- Suit details (bowtie/lapels abstract) -->
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 9l1.5 2 1.5-2" />
+            </svg>
+          </div>
+          <div class="text-left ml-2">
+            <p class="font-serif text-xs uppercase tracking-[.25em] text-[#6a6a6a] mb-1">Código de Vestimenta</p>
+            <p class="font-script text-4xl text-gold-dark">Traje Formal / Gala</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section id="timeline" class="py-20 relative z-10 w-full clear-both">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="font-script text-4xl sm:text-5xl text-gold mb-3 tracking-wide">Nuestro Día</h2>
+        <div class="divider">
+          <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+            <path d="M0 10 Q10 0 20 10 T40 10" stroke="#C8A96E" stroke-width="1" />
+            <circle cx="20" cy="10" r="2" fill="#D4AF37" />
+          </svg>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="timeline-line"></div>
+        <div id="timeline-items" class="space-y-12 relative"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="py-20 relative z-10 w-full">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-script text-4xl sm:text-5xl text-gold mb-3 tracking-wide">Nuestros Momentos</h2>
+        <div class="divider">
+          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="1.5"
+              d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+            <path stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </div>
+      </div>
+      <!-- GALERIA DINAMICA (FÁCIL DE EDITAR) -->
+      <!-- Añade tus archivos a la lista "galleryFiles" abajo. ¡Es automático! -->
+      <div id="masonry-gallery" class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 reveal w-full mt-8">
+        <!-- Las fotos se cargarán aquí usando Javascript -->
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // LISTA DE FOTOS Y VIDEOS
+          // Puedes borrar o escribir nuevos nombres de archivo aquí sin tocar todo el HTML:
+          const galleryFiles = [
+            "IMG_9628.jpg", "IMG_0801.mov", "IMG_0541.jpg", "IMG_0986.mov", "IMG_1144.jpg",
+            "IMG_1760.jpg", "IMG_1812.jpg", "IMG_2240.JPG", "IMG_2294.mov", "IMG_3538.jpg",
+            "IMG_3594.jpg", "IMG_4254.jpg", "IMG_4818.jpg", "IMG_5279.jpg", "IMG_5377.jpg",
+            "IMG_5671.jpg", "IMG_5674.jpg", "IMG_6319.jpg", "IMG_6342.jpg", "IMG_7108.jpg",
+            "IMG_7267.jpg", "IMG_7301.jpg", "IMG_7384.mov", "IMG_7385.jpg", "IMG_7394.MOV",
+            "IMG_7436.jpg", "IMG_7438.jpg", "IMG_7439.jpg", "IMG_7446.jpg", "IMG_7448.jpg",
+            "IMG_7471.jpg", "IMG_7628.jpg", "IMG_7903.jpg", "IMG_8878.jpg", "IMG_9644.jpg",
+            "IMG_9736.jpg", "IMG_9995.jpg"
+          ];
+
+          const container = document.getElementById('masonry-gallery');
+          if (container) {
+            let htmlStr = '';
+            galleryFiles.forEach(file => {
+              const ext = file.split('.').pop().toLowerCase();
+              const isVideo = ext === 'mov' || ext === 'mp4';
+              const mediaTag = isVideo
+                ? `<video src="Photos/web/${file}" autoplay loop muted playsinline class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"></video>`
+                : `<img src="Photos/web/${file}" alt="Momento Boda" loading="lazy" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />`;
+
+              htmlStr += `
+                <div class="gallery-item break-inside-avoid rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gold/10">
+                  ${mediaTag}
+                </div>
+              `;
+            });
+            container.innerHTML = htmlStr;
+          }
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- ===== GUEST WISHES ===== -->
+  <section id="wishes" class="py-20 relative z-10 w-full">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-script text-4xl sm:text-5xl text-gold mb-3 tracking-wide">Deseos para los Novios</h2>
+        <div class="divider">
+          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="1.5"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <p class="font-serif text-base text-[#6a6a6a] mt-3">Selecciona un mensaje para añadir a la pizarra y enviar</p>
+      </div>
+
+      <!-- Interactive Wishes Board -->
+      <div id="wishes-board"
+        class="w-full max-w-xl mx-auto mb-8 relative p-6 bg-white/40 shadow-xl border border-gold/30 rounded-2xl min-h-[300px] max-h-[400px] overflow-y-auto hidden">
+        <h3 class="font-script text-2xl text-gold-dark text-center mb-6">Pizarra de Deseos</h3>
+        <div id="wishes-container" class="space-y-4">
+          <!-- Wishes will be appended here -->
+        </div>
+      </div>
+
+      <div class="wish-card reveal w-full max-w-xl mx-auto">
+        <input type="text" id="wish-guest-name" required placeholder="Tu Nombre o Familia (Ej: Familia Quiñones)"
+          class="w-full bg-white/50 border border-gold/30 rounded-xl px-5 py-3 font-serif text-[#2a2a2a] placeholder-[#8a8a8a] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors mb-4" />
+
+        <div class="grid gap-3 mb-6">
+          <button type="button"
+            class="wish-preset text-left font-serif text-sm bg-white/80 border border-gold/20 hover:border-gold text-[#3a3a3a] px-4 py-3 rounded-lg hover:shadow-md transition-all">¡Que
+            viva los novios, mil felicidades en esta nueva etapa!</button>
+          <button type="button"
+            class="wish-preset text-left font-serif text-sm bg-white/80 border border-gold/20 hover:border-gold text-[#3a3a3a] px-4 py-3 rounded-lg hover:shadow-md transition-all">Les
+            deseo toda la felicidad del mundo y mucho amor en su matrimonio.</button>
+          <button type="button"
+            class="wish-preset text-left font-serif text-sm bg-white/80 border border-gold/20 hover:border-gold text-[#3a3a3a] px-4 py-3 rounded-lg hover:shadow-md transition-all">¡Hacen
+            una pareja increíble y hermosa! Bendiciones.</button>
+          <button type="button"
+            class="wish-preset text-left font-serif text-sm bg-white/80 border border-gold/20 hover:border-gold text-[#3a3a3a] px-4 py-3 rounded-lg hover:shadow-md transition-all">¡Que
+            esta nueva etapa esté llena de bendiciones y mucha paciencia mutua!</button>
+          <button type="button"
+            class="wish-preset text-left font-serif text-sm bg-white/80 border border-gold/20 hover:border-gold text-[#3a3a3a] px-4 py-3 rounded-lg hover:shadow-md transition-all">¡Gracias
+            por hacerme parte de su día especial! Estaré allí celebrando.</button>
+        </div>
+
+      </div>
+
+      <div class="mb-6 relative">
+        <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none">
+          <span class="bg-[#FFFDF8] px-4 font-script text-gold text-2xl">o escribe el tuyo</span>
+        </div>
+        <hr class="border-gold/20" />
+      </div>
+
+      <textarea id="custom-wish-text" rows="3" placeholder="Escribe aquí tu lindo deseo para los novios..."
+        class="w-full bg-white/50 border border-gold/30 rounded-xl px-5 py-3 font-serif text-[#3a3a3a] placeholder-[#8a8a8a] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors mb-6 resize-none"></textarea>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button id="btn-wish-submit" type="button"
+          class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-gold-dark to-gold text-white font-serif font-semibold rounded-xl px-5 py-3 hover:shadow-lg hover:shadow-gold/20 active:scale-[.98] transition-all disabled:opacity-50">
+          Añadir a Pizarra
+        </button>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ===== RSVP ===== -->
+  <section id="rsvp" class="py-20 relative z-10 w-full">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-script text-4xl sm:text-5xl text-gold mb-3 tracking-wide">Confirmar Asistencia</h2>
+        <div class="divider mb-4">
+          <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+            <path d="M0 10 Q10 20 20 10 T40 10" stroke="#C8A96E" stroke-width="1" />
+            <polygon points="20,7 23,10 20,13 17,10" fill="#D4AF37" />
+          </svg>
+        </div>
+        <p class="font-serif text-base text-[#6a6a6a]">Confirmar asistencia hasta el <span
+            class="text-gold-dark font-semibold">30 de marzo</span></p>
+      </div>
+      <div
+        class="card-glow bg-white/[.03] backdrop-blur-sm border border-gold/10 rounded-2xl p-8 sm:p-10 reveal shadow-xl">
+        <div id="pases-info" class="text-center mb-8 bg-gold/10 border border-gold/20 rounded-xl px-6 py-4">
+          <p class="font-serif text-lg text-[#1a1a1a] font-semibold" id="pases-text"></p>
+        </div>
+        <form id="rsvp-form" class="space-y-6">
+          <div>
+            <label for="rsvp-name" class="block font-serif text-sm uppercase tracking-widest text-[#6a6a6a] mb-2">Nombre
+              del Invitado / Familia</label>
+            <input type="text" id="rsvp-name" required placeholder="Ej. Familia Guzmán o Juan Pérez"
+              class="w-full bg-white/50 border border-gold/30 rounded-xl px-5 py-3 font-serif text-[#1a1a1a] placeholder-[#8a8a8a] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors" />
+          </div>
+          <div>
+            <label for="rsvp-phone"
+              class="block font-serif text-sm uppercase tracking-widest text-[#6a6a6a] mb-2">Número
+              de Teléfono (Opcional)</label>
+            <input type="tel" id="rsvp-phone" placeholder="Ej. +591 71234567"
+              class="w-full bg-white/50 border border-gold/30 rounded-xl px-5 py-3 font-serif text-[#1a1a1a] placeholder-[#8a8a8a] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors" />
+          </div>
+          <div>
+            <label for="rsvp-count"
+              class="block font-serif text-sm uppercase tracking-widest text-[#6a6a6a] mb-2">Número
+              de personas que asisten</label>
+            <select id="rsvp-count" required
+              class="w-full bg-white/50 border border-gold/30 rounded-xl px-5 py-3 font-serif text-[#1a1a1a] focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-colors appearance-none cursor-pointer"></select>
+          </div>
+          <div class="pt-4 space-y-3">
+            <p class="font-serif text-sm text-center text-[#6a6a6a] mb-2">Enviar confirmación vía WhatsApp</p>
+            <button type="button" id="btn-novio"
+              class="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-gold-dark to-gold text-white font-serif font-semibold text-lg rounded-xl px-6 py-4 hover:shadow-lg hover:shadow-gold/20 active:scale-[.98] transition-all duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Confirmar con el Novio
+            </button>
+            <button type="button" id="btn-novia"
+              class="w-full flex items-center justify-center gap-3 bg-white/50 border-2 border-gold text-gold-dark font-serif font-semibold text-lg rounded-xl px-6 py-4 hover:bg-gold/10 hover:shadow-lg hover:shadow-gold/10 active:scale-[.98] transition-all duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Confirmar con la Novia
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-12 bg-[#F9F4E8] text-center border-t border-gold/20 mt-12">
+    <div class="divider mb-6"><span class="text-gold animate-heartbeat text-2xl">♥</span></div>
+    <p class="font-script text-4xl text-gold-dark mb-2">J &amp; D</p>
+    <p class="font-serif text-sm text-[#5a5a5a] tracking-widest uppercase mb-4">11 · Abril · 2026</p>
+    <p class="font-serif text-xs text-[#8a8a8a] mt-4">Hecho con amor y elegancia</p>
+  </footer>
+
+  <!-- ===== CUSTOM MINIMALIST MUSIC PLAYER ===== -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="Ricardo Montaner - Tan Enamorados.mp3" type="audio/mpeg">
+  </audio>
+  <button id="custom-audio-btn" aria-label="Reproducir / Pausar música">
+    <svg id="icon-play" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z" />
+    </svg>
+    <svg id="icon-pause" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M10 4H6v16h4V4zm8 0h-4v16h4V4z" />
+    </svg>
+  </button>
+
+  <!-- ===== NAV DOTS ===== -->
+  <nav class="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden sm:flex flex-col gap-3">
+    <a href="#hero" class="nav-dot w-2.5 h-2.5 rounded-full bg-gold/30 hover:bg-gold transition-colors"
+      data-section="hero" title="Inicio"></a>
+    <a href="#detalles" class="nav-dot w-2.5 h-2.5 rounded-full bg-gold/30 hover:bg-gold transition-colors"
+      data-section="detalles" title="Detalles"></a>
+    <a href="#tree-section" class="nav-dot w-2.5 h-2.5 rounded-full bg-gold/30 hover:bg-gold transition-colors"
+      data-section="tree-section" title="Árbol"></a>
+    <a href="#timeline" class="nav-dot w-2.5 h-2.5 rounded-full bg-gold/30 hover:bg-gold transition-colors"
+      data-section="timeline" title="Nuestro Día"></a>
+    <a href="#rsvp" class="nav-dot w-2.5 h-2.5 rounded-full bg-gold/30 hover:bg-gold transition-colors"
+      data-section="rsvp" title="RSVP"></a>
+  </nav>
+
+  <!-- ===== FIREBASE SDK (Compat/UMD Version for Local File Execution) ===== -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAKQsGxNapj7jOMKbRt8X4_Kc5_DK4qKUk",
+      authDomain: "treeprotector-a4634.firebaseapp.com",
+      databaseURL: "https://treeprotector-a4634-default-rtdb.firebaseio.com",
+      projectId: "treeprotector-a4634",
+      storageBucket: "treeprotector-a4634.appspot.com",
+      messagingSenderId: "1061655919880",
+      appId: "1:1061655919880:web:dc5b7d36436e2f482c80bd",
+      measurementId: "G-KCV9YDE214"
+    };
+
+    // Initialize Firebase using compat syntax
+    firebase.initializeApp(firebaseConfig);
+
+    // Bind the global variables so app.js can use them exactly as before
+    window.firebaseDB = firebase.database();
+    window.firebaseRef = function (db, path) { return db.ref(path); };
+    window.firebasePush = function (ref, data) { return ref.push(data); };
+    window.firebaseOnValue = function (ref, callback, errorCallback) { return ref.on('value', callback, errorCallback); };
+    window.firebaseServerTimestamp = firebase.database.ServerValue.TIMESTAMP;
+  </script>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
