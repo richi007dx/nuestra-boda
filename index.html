@@ -392,7 +392,7 @@
       </div>
       <!-- GALERIA DINAMICA (FÁCIL DE EDITAR) -->
       <!-- Añade tus archivos a la lista "galleryFiles" abajo. ¡Es automático! -->
-      <div id="masonry-gallery" class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 reveal w-full mt-8">
+      <div id="masonry-gallery" class="columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2 reveal w-full mt-6">
         <!-- Las fotos se cargarán aquí usando Javascript -->
       </div>
 
@@ -402,13 +402,13 @@
           // Puedes borrar o escribir nuevos nombres de archivo aquí sin tocar todo el HTML:
           const galleryFiles = [
             "IMG_0541.jpg", "IMG_0801.mov", "IMG_0986.mov", "IMG_1144.jpg",
-            "IMG_1760.jpg", "IMG_1812.jpg", "IMG_2240.JPG", "IMG_2294.mov", "IMG_3538.jpg",
-            "IMG_3594.jpg", "IMG_4254.jpg", "IMG_4818.jpg", "IMG_5279.jpg", "IMG_5377.jpg",
-            "IMG_5671.jpg", "IMG_5674.jpg", "IMG_6319.jpg", "IMG_6342.jpg", "IMG_7108.jpg",
-            "IMG_7267.jpg", "IMG_7301.jpg", "IMG_7384.mov", "IMG_7385.jpg", "IMG_7394.MOV",
-            "IMG_7436.jpg", "IMG_7438.jpg", "IMG_7439.jpg", "IMG_7446.jpg", "IMG_7448.jpg",
-            "IMG_7471.jpg", "IMG_7628.jpg", "IMG_7903.jpg", "IMG_8878.jpg", "IMG_9644.jpg",
-            "IMG_9736.jpg", "IMG_9995.jpg"
+            "IMG_1760.jpg", "IMG_1812.jpg", "IMG_2240.JPG", "IMG_2294.mov",
+            "IMG_3538.jpg", "IMG_3594.jpg", "IMG_4254.jpg", "IMG_4818.jpg",
+            "IMG_5279.jpg", "IMG_5377.jpg", "IMG_5671.jpg", "IMG_5674.jpg",
+            "IMG_6342.jpg", "IMG_7108.jpg", "IMG_7267.jpg", "IMG_7301.jpg",
+            "IMG_7384.mov", "IMG_7394.MOV", "IMG_7439.jpg", "IMG_7446.jpg",
+            "IMG_7471.jpg", "IMG_7628.jpg", "IMG_7903.jpg", "IMG_8878.jpg",
+            "IMG_9644.jpg", "IMG_9736.jpg", "IMG_9995.jpg"
           ];
 
           const container = document.getElementById('masonry-gallery');
@@ -422,7 +422,7 @@
                 : `<img src="Photos/web/${file}" alt="Momento Boda" loading="lazy" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />`;
 
               htmlStr += `
-                <div class="gallery-item break-inside-avoid rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gold/10">
+                <div class="gallery-item break-inside-avoid shadow-sm hover:shadow-md transition-all duration-300">
                   ${mediaTag}
                 </div>
               `;

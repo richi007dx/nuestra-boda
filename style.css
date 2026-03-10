@@ -611,11 +611,12 @@ body {
 /* ===== GALLERY ===== */
 .gallery-item {
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 6px;
   cursor: none;
   position: relative;
   isolation: isolate;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  background-color: transparent;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05), border 1px solid rgba(200, 169, 110, 0.1);
 }
 
 .gallery-item::after {
