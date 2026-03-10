@@ -85,13 +85,16 @@
     });
   }
 
-  function openEnvelope() {
+  let musicHasStarted = false;
+
+  function openEnvelope(userInitiated = true) {
     if (!envelopeBody || envelopeBody.classList.contains('open')) return;
     envelopeBody.classList.add('open');
 
     // Auto-play music when envelope is opened (user interaction)
-    if (bgMusic) {
+    if (userInitiated && bgMusic && !musicHasStarted) {
       bgMusic.play().then(() => {
+        musicHasStarted = true;
         updateAudioBtnState();
       }).catch(e => console.log('Autoplay prevent by browser', e));
     }
@@ -101,10 +104,23 @@
       setTimeout(() => { envelopeOverlay.style.display = 'none'; }, 800);
     }, 2000);
   }
+
+  // Global click listener to start music on first user interaction if auto-opened
+  document.body.addEventListener('click', () => {
+    if (!musicHasStarted && envelopeBody && envelopeBody.classList.contains('open') && bgMusic) {
+      bgMusic.play().then(() => {
+        musicHasStarted = true;
+        updateAudioBtnState();
+      }).catch(e => console.log('Autoplay prevented', e));
+    }
+  }, { once: false });
+
   if (envelopeBody) {
-    envelopeBody.addEventListener('click', openEnvelope);
-    if (skipBtn) skipBtn.addEventListener('click', (e) => { e.stopPropagation(); openEnvelope(); });
-    setTimeout(openEnvelope, 7000); // auto-open after 7s
+    envelopeBody.addEventListener('click', () => openEnvelope(true));
+    if (skipBtn) skipBtn.addEventListener('click', (e) => { e.stopPropagation(); openEnvelope(true); });
+    
+    // Auto-open after 7s without attempting to play audio (blocked by browser)
+    setTimeout(() => openEnvelope(false), 7000);
   }
 
   // ===== FALLING PETALS =====
