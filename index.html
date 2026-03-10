@@ -392,7 +392,7 @@
       </div>
       <!-- GALERIA DINAMICA (FÁCIL DE EDITAR) -->
       <!-- Añade tus archivos a la lista "galleryFiles" abajo. ¡Es automático! -->
-      <div id="masonry-gallery" class="columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2 reveal w-full mt-6">
+      <div id="masonry-gallery" class="columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-1.5 space-y-1.5 reveal w-full mt-6">
         <!-- Las fotos se cargarán aquí usando Javascript -->
       </div>
 
@@ -418,8 +418,8 @@
               const ext = file.split('.').pop().toLowerCase();
               const isVideo = ext === 'mov' || ext === 'mp4';
               const mediaTag = isVideo
-                ? `<video src="Photos/web/${file}" autoplay loop muted playsinline class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"></video>`
-                : `<img src="Photos/web/${file}" alt="Momento Boda" loading="lazy" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />`;
+                ? `<video src="Photos/web/${file}" autoplay loop muted playsinline class="w-full h-auto object-cover hover:scale-110 transition-transform duration-700"></video>`
+                : `<img src="Photos/web/${file}" alt="Momento Boda" loading="lazy" class="w-full h-auto object-cover hover:scale-110 transition-transform duration-700" />`;
 
               htmlStr += `
                 <div class="gallery-item break-inside-avoid shadow-sm hover:shadow-md transition-all duration-300">
