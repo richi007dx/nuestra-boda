@@ -394,23 +394,36 @@
       </div>
 
       <!-- Compact thumbnail grid -->
-      <div id="gallery-grid" class="reveal grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-1 sm:gap-1.5">
+      <div id="gallery-grid"
+        class="reveal grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-1 sm:gap-1.5">
         <!-- Photos load here via JS -->
       </div>
 
       <!-- Lightbox overlay -->
-      <div id="gallery-lightbox" class="fixed inset-0 z-[9998] bg-black/90 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" style="display:none;">
-        <button id="lightbox-close" class="absolute top-5 right-5 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      <div id="gallery-lightbox"
+        class="fixed inset-0 z-[9998] bg-black/90 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+        style="display:none;">
+        <button id="lightbox-close"
+          class="absolute top-5 right-5 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
-        <button id="lightbox-prev" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg>
+        <button id="lightbox-prev"
+          class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
-        <button id="lightbox-next" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+        <button id="lightbox-next"
+          class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" d="M9 5l7 7-7 7" />
+          </svg>
         </button>
         <div id="lightbox-content" class="max-w-[90vw] max-h-[85vh] transition-transform duration-500 ease-out"></div>
-        <div id="lightbox-counter" class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/50 font-serif text-sm tracking-widest"></div>
+        <div id="lightbox-counter"
+          class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/50 font-serif text-sm tracking-widest"></div>
       </div>
 
       <script>
@@ -420,7 +433,7 @@
             "IMG_1760.jpg", "IMG_1812.jpg", "IMG_2240.JPG", "IMG_2294.mov",
             "IMG_3538.jpg", "IMG_3594.jpg", "IMG_4254.jpg", "IMG_4818.jpg",
             "IMG_5279.jpg", "IMG_5377.jpg", "IMG_5674.jpg", "IMG_6342.jpg",
-            "IMG_7108.jpg", "IMG_7267.jpg", "IMG_7301.jpg", "IMG_7394.MOV",
+            "IMG_7108.jpg", "IMG_7267.jpg", "IMG_7301.jpg", "IMG_7394.mov",
             "IMG_7439.jpg", "IMG_7471.jpg", "IMG_7628.jpg", "IMG_7903.jpg",
             "IMG_8878.jpg", "IMG_9644.jpg", "IMG_9736.jpg", "IMG_9995.jpg"
           ];
@@ -502,7 +515,7 @@
 
           // Swipe support for mobile
           let touchStartX = 0;
-          lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+          lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
           lightbox.addEventListener('touchend', (e) => {
             const diff = e.changedTouches[0].screenX - touchStartX;
             if (Math.abs(diff) > 50) {
@@ -510,7 +523,7 @@
               else { currentIdx = (currentIdx - 1 + galleryFiles.length) % galleryFiles.length; }
               renderLightboxItem(currentIdx);
             }
-          }, {passive: true});
+          }, { passive: true });
         });
       </script>
     </div>
