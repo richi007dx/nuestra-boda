@@ -380,29 +380,41 @@
   </section>
 
   <!-- ===== GALLERY ===== -->
-  <section id="gallery" class="py-20 relative z-10 w-full">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center mb-12 reveal">
-        <h2 class="font-script text-4xl sm:text-5xl text-gold mb-3 tracking-wide">Nuestros Momentos</h2>
+  <section id="gallery" class="py-16 relative z-10 w-full">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-8 reveal">
+        <h2 class="font-script text-3xl sm:text-4xl text-gold mb-2 tracking-wide">Nuestros Momentos</h2>
         <div class="divider">
-          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-width="1.5"
               d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
             <path stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         </div>
       </div>
-      <!-- GALERIA DINAMICA (FÁCIL DE EDITAR) -->
-      <!-- Añade tus archivos a la lista "galleryFiles" abajo. ¡Es automático! -->
-      <div id="masonry-gallery"
-        class="columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-1.5 space-y-1.5 reveal w-full mt-6">
-        <!-- Las fotos se cargarán aquí usando Javascript -->
+
+      <!-- Compact thumbnail grid -->
+      <div id="gallery-grid" class="reveal grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-1 sm:gap-1.5">
+        <!-- Photos load here via JS -->
+      </div>
+
+      <!-- Lightbox overlay -->
+      <div id="gallery-lightbox" class="fixed inset-0 z-[9998] bg-black/90 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" style="display:none;">
+        <button id="lightbox-close" class="absolute top-5 right-5 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <button id="lightbox-prev" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="lightbox-next" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div id="lightbox-content" class="max-w-[90vw] max-h-[85vh] transition-transform duration-500 ease-out"></div>
+        <div id="lightbox-counter" class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/50 font-serif text-sm tracking-widest"></div>
       </div>
 
       <script>
         document.addEventListener('DOMContentLoaded', () => {
-          // LISTA DE FOTOS Y VIDEOS
-          // Puedes borrar o escribir nuevos nombres de archivo aquí sin tocar todo el HTML:
           const galleryFiles = [
             "IMG_0541.jpg", "IMG_0801.mov", "IMG_0986.mov", "IMG_1144.jpg",
             "IMG_1760.jpg", "IMG_1812.jpg", "IMG_2240.JPG", "IMG_2294.mov",
@@ -413,24 +425,92 @@
             "IMG_8878.jpg", "IMG_9644.jpg", "IMG_9736.jpg", "IMG_9995.jpg"
           ];
 
-          const container = document.getElementById('masonry-gallery');
-          if (container) {
+          const grid = document.getElementById('gallery-grid');
+          const lightbox = document.getElementById('gallery-lightbox');
+          const lbContent = document.getElementById('lightbox-content');
+          const lbCounter = document.getElementById('lightbox-counter');
+          const lbClose = document.getElementById('lightbox-close');
+          const lbPrev = document.getElementById('lightbox-prev');
+          const lbNext = document.getElementById('lightbox-next');
+          let currentIdx = 0;
+
+          if (grid) {
             let htmlStr = '';
-            galleryFiles.forEach(file => {
+            galleryFiles.forEach((file, i) => {
               const ext = file.split('.').pop().toLowerCase();
               const isVideo = ext === 'mov' || ext === 'mp4';
-              const mediaTag = isVideo
-                ? `<video src="Photos/web/${file}" autoplay loop muted playsinline class="w-full h-auto object-cover hover:scale-110 transition-transform duration-700"></video>`
-                : `<img src="Photos/web/${file}" alt="Momento Boda" loading="lazy" class="w-full h-auto object-cover hover:scale-110 transition-transform duration-700" />`;
+              const media = isVideo
+                ? `<video src="Photos/web/${file}" autoplay loop muted playsinline class="w-full h-full object-cover"></video>`
+                : `<img src="Photos/web/${file}" alt="Momento" loading="lazy" class="w-full h-full object-cover" />`;
 
               htmlStr += `
-                <div class="gallery-item break-inside-avoid shadow-sm hover:shadow-md transition-all duration-300">
-                  ${mediaTag}
-                </div>
-              `;
+                <div class="gallery-thumb aspect-square overflow-hidden rounded cursor-pointer" data-index="${i}">
+                  ${media}
+                </div>`;
             });
-            container.innerHTML = htmlStr;
+            grid.innerHTML = htmlStr;
+
+            // Thumbnail click → open lightbox
+            grid.querySelectorAll('.gallery-thumb').forEach(thumb => {
+              thumb.addEventListener('click', () => {
+                currentIdx = parseInt(thumb.dataset.index);
+                openLightbox(currentIdx);
+              });
+            });
           }
+
+          function openLightbox(idx) {
+            currentIdx = idx;
+            renderLightboxItem(idx);
+            lightbox.style.display = 'flex';
+            requestAnimationFrame(() => {
+              lightbox.classList.remove('opacity-0', 'pointer-events-none');
+              lightbox.classList.add('opacity-100');
+            });
+            document.body.style.overflow = 'hidden';
+          }
+
+          function closeLightbox() {
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+            setTimeout(() => { lightbox.style.display = 'none'; lbContent.innerHTML = ''; }, 300);
+          }
+
+          function renderLightboxItem(idx) {
+            const file = galleryFiles[idx];
+            const ext = file.split('.').pop().toLowerCase();
+            const isVideo = ext === 'mov' || ext === 'mp4';
+            lbContent.innerHTML = isVideo
+              ? `<video src="Photos/web/${file}" autoplay loop muted playsinline controls class="max-w-[90vw] max-h-[85vh] rounded-lg shadow-2xl"></video>`
+              : `<img src="Photos/web/${file}" alt="Momento" class="max-w-[90vw] max-h-[85vh] rounded-lg shadow-2xl object-contain" />`;
+            lbCounter.textContent = `${idx + 1} / ${galleryFiles.length}`;
+            lbContent.style.transform = 'scale(0.92)';
+            requestAnimationFrame(() => { lbContent.style.transform = 'scale(1)'; });
+          }
+
+          lbClose.addEventListener('click', closeLightbox);
+          lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+          lbPrev.addEventListener('click', (e) => { e.stopPropagation(); currentIdx = (currentIdx - 1 + galleryFiles.length) % galleryFiles.length; renderLightboxItem(currentIdx); });
+          lbNext.addEventListener('click', (e) => { e.stopPropagation(); currentIdx = (currentIdx + 1) % galleryFiles.length; renderLightboxItem(currentIdx); });
+          document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'none') return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') { currentIdx = (currentIdx - 1 + galleryFiles.length) % galleryFiles.length; renderLightboxItem(currentIdx); }
+            if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % galleryFiles.length; renderLightboxItem(currentIdx); }
+          });
+
+          // Swipe support for mobile
+          let touchStartX = 0;
+          lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+          lightbox.addEventListener('touchend', (e) => {
+            const diff = e.changedTouches[0].screenX - touchStartX;
+            if (Math.abs(diff) > 50) {
+              if (diff < 0) { currentIdx = (currentIdx + 1) % galleryFiles.length; }
+              else { currentIdx = (currentIdx - 1 + galleryFiles.length) % galleryFiles.length; }
+              renderLightboxItem(currentIdx);
+            }
+          }, {passive: true});
         });
       </script>
     </div>
