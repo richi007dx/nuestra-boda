@@ -278,28 +278,7 @@
     // Mensaje para Excel
     const sheetWish = window.userSelectedWish || "";
 
-    // 1. Guardar en Google Sheets silenciosamente
-    try {
-      await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
-        method: "POST",
-        mode: "no-cors", // Requisito para App Scripts sin dominio propio
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          invitado: name,
-          telefono: guestPhone,
-          cantidad: count,
-          bando: bando,
-          mensaje: sheetWish
-        })
-      });
-    } catch (err) {
-      console.error("Error al registrar en Google Sheets:", err);
-      // Falla silenciosa: si Google Sheets falla, igual enviamos a WhatsApp
-    }
-
-    // 2. Construir mensaje de WhatsApp
+    // 1. Construir mensaje de WhatsApp PRIMERO (antes de cualquier async)
     let text = count === "0"
       ? `¡Hola! Soy *${name}*.\nLamentablemente *no podré asistir* a la boda, pero les deseo muchísimas felicidades paso a paso.`
       : `¡Hola! Soy *${name}*.\nConfirmo la asistencia de *${count} persona(s)* a su boda.`;
@@ -308,24 +287,38 @@
       text += `\n\nTambién te dejo este deseo a través de la pizarra virtual:\n"${window.userSelectedWish}"`;
     }
 
-    // 3. Abrir WhatsApp y actualizar UI a estado "Completado"
-    setTimeout(() => {
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+    // 2. Abrir WhatsApp INMEDIATAMENTE (dentro del contexto del clic del usuario)
+    //    Esto evita que Safari/Chrome bloqueen el popup
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
 
-      const btnN = document.getElementById('btn-novio');
-      const btnS = document.getElementById('btn-novia');
+    // 3. Actualizar UI a estado "Completado"
+    const btnN = document.getElementById('btn-novio');
+    const btnS = document.getElementById('btn-novia');
 
-      if (btnN) {
-        btnN.textContent = bando === 'Novio' ? "¡Gracias por confirmar!" : "Asistencia Confirmada";
-        btnN.disabled = true;
-        btnN.classList.add('opacity-80', 'cursor-not-allowed');
-      }
-      if (btnS) {
-        btnS.textContent = bando === 'Novia' ? "¡Gracias por confirmar!" : "Asistencia Confirmada";
-        btnS.disabled = true;
-        btnS.classList.add('opacity-80', 'cursor-not-allowed');
-      }
-    }, 100);
+    if (btnN) {
+      btnN.textContent = bando === 'Novio' ? "¡Gracias por confirmar!" : "Asistencia Confirmada";
+      btnN.disabled = true;
+      btnN.classList.add('opacity-80', 'cursor-not-allowed');
+    }
+    if (btnS) {
+      btnS.textContent = bando === 'Novia' ? "¡Gracias por confirmar!" : "Asistencia Confirmada";
+      btnS.disabled = true;
+      btnS.classList.add('opacity-80', 'cursor-not-allowed');
+    }
+
+    // 4. Guardar en Google Sheets EN SEGUNDO PLANO (no bloquea nada)
+    fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        invitado: name,
+        telefono: guestPhone,
+        cantidad: count,
+        bando: bando,
+        mensaje: sheetWish
+      })
+    }).catch(err => console.error("Error al registrar en Google Sheets:", err));
   }
 
   document.getElementById('btn-novio')?.addEventListener('click', () => handleRSVP('59179710021', 'Novio'));
